@@ -1,0 +1,16 @@
+# 核心服务依赖
+fastapi
+uvicorn
+python-multipart
+pydantic
+python-dotenv
+httpx
+
+# ASR 逻辑依赖
+qwen-asr
+vllm
+torch
+
+# 数据处理与兼容性
+numpy<2.0
+pandas>=2.0.0

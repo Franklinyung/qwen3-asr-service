@@ -1,21 +1,31 @@
-# Environment & secrets
-.env
-
-# Logs & temp files
-logs/
-temp_audio/
-temp/
-*.log
-
-# Python
+# Python 缓存
 __pycache__/
 *.py[cod]
-*.pyc
-.pytest_cache/
+*$py.class
 
-# System
-.DS_Store
+# 虚拟环境
+.env
+.venv
+env/
+venv/
+ENV/
+
+# 项目特有临时文件
+temp_audio/
+logs/
+
+# IDE 配置文件
 .vscode/
+.idea/
 
-# User-specific test files
-test_client.py
+# 系统文件
+.DS_Store
+Thumbs.db
+
+# 本地环境变量 (包含路径、密钥等)
+.env
+.env.local
+.env.*.local
+
+# 测试输出
+tests/output/
