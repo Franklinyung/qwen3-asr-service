@@ -1,0 +1,21 @@
+# Environment & secrets
+.env
+
+# Logs & temp files
+logs/
+temp_audio/
+temp/
+*.log
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyc
+.pytest_cache/
+
+# System
+.DS_Store
+.vscode/
+
+# User-specific test files
+test_client.py
