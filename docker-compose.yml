@@ -1,0 +1,26 @@
+services:
+  qwen3-asr-service:
+    build: .
+    container_name: qwen3-asr-service
+    restart: unless-stopped
+    ports:
+      - "8002:8002"
+    environment:
+      - QWEN_ASR_MODEL_PATH=/models/Qwen3-ASR-1.7B
+      - GPU_UTILIZATION=0.8
+      - MAX_MODEL_LEN=32768
+      - IDLE_TIMEOUT=600
+      - PORT=8002
+    volumes:
+      # ⚠️ 替换为你本地的模型目录路径
+      - /your/model/path:/models
+      - ./logs:/app/logs
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+    shm_size: '16gb'
+    # 注意：需要支持 CUDA 12.8 的 GPU 环境（RTX 3090/4090 等）

@@ -25,7 +25,13 @@ Self-hosted, high-performance ASR inference service powered by **FastAPI** and *
 ```bash
 conda create -n asr_test python=3.10 -y
 conda activate asr_test
+
+# 安装全部依赖（推荐，自动安装 qwen-asr + vllm==0.14.0）
 pip install -r requirements.txt
+
+# 或手动安装（使用官方 qwen-asr 包）
+pip install "qwen-asr[vllm]"  # 官方推荐，自动处理版本兼容
+pip install fastapi uvicorn[standard] python-multipart pydantic python-dotenv httpx
 ```
 
 ### 2. Configuration / 配置

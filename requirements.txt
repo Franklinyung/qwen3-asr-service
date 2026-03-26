@@ -1,16 +1,21 @@
-# 核心服务依赖
+# ============================================================
+# Qwen3-ASR Service 依赖
+# ============================================================
+# 官方安装方式：pip install "qwen-asr[vllm]"
+# 这会自动安装 vllm==0.14.0 及其所有依赖（包括 torch）
+# ============================================================
+
+# Qwen3-ASR 官方包（包含 vLLM 后端支持）
+qwen-asr[vllm]
+
+# FastAPI 服务框架
 fastapi
-uvicorn
+uvicorn[standard]
 python-multipart
+
+# 数据验证与配置
 pydantic
 python-dotenv
+
+# HTTP 客户端（用于健康检查等）
 httpx
-
-# ASR 逻辑依赖
-qwen-asr
-vllm
-torch
-
-# 数据处理与兼容性
-numpy<2.0
-pandas>=2.0.0
